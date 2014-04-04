@@ -1,8 +1,8 @@
 require_relative './config.rb'
 
-class SaveFinancialDataAcceptanceTest < MiniTest::Unit::TestCase
+class FundamentusAcceptanceTest < MiniTest::Unit::TestCase
 
-  def test_main
+  def test_save_financial_data
 
     stocks = {
       'PETR4' => { json_path: TEST_DIR + 'output/PETR4.json', json: petr4_json },

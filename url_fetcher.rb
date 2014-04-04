@@ -15,6 +15,7 @@ class UrlFetcher
         puts "Downloading #{key} from #{url}"
       end
       responses[key] = download(url)
+      sleep(0.5)
     end
     responses
   end

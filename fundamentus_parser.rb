@@ -54,7 +54,6 @@ class FundamentusParser
     end
 
     def find_td_with_label(label, index = 0)
-      td = nil
       count = 0
       @doc.css('body.detalhes div.conteudo td span.txt').each do |item|
         if item.content.strip == label
@@ -64,6 +63,7 @@ class FundamentusParser
           count += 1
         end
       end
+      nil
     end
 
 end

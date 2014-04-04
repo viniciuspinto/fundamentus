@@ -1,4 +1,4 @@
-class FundamentusPageFetcher
+class FundamentusFetcher
 
   def initialize(fetcher)
     @fetcher = fetcher

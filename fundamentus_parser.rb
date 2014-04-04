@@ -2,31 +2,20 @@ require 'nokogiri'
 
 class FundamentusParser
 
-  def parse(pages)
-    if not pages.is_a?(Array)
-      pages = [pages]
-    end
-    parsed = []
-    pages.each do |content|
-      parsed << parse_page(content)
-    end
-    parsed
+  def parse(content)
+    data = {}
+    @doc = Nokogiri::HTML.parse(content)
+    parsed = {
+      :market_cap => parse_market_cap,
+      :last_processed => parse_last_processed,
+      :net_debt => parse_net_debt,
+      :net_assets => parse_net_assets,
+      :yearly_net_income => parse_yearly_net_income,
+      :yearly_net_profit => parse_yearly_net_profit
+    }
   end
 
   private
-    def parse_page(content)
-      data = {}
-      @doc = Nokogiri::HTML.parse(content)
-      parsed = {
-        :market_cap => parse_market_cap,
-        :last_processed => parse_last_processed,
-        :net_debt => parse_net_debt,
-        :net_assets => parse_net_assets,
-        :yearly_net_income => parse_yearly_net_income,
-        :yearly_net_profit => parse_yearly_net_profit
-      }
-    end
-
     def parse_market_cap
       read_value_with_label('Valor de mercado')
     end

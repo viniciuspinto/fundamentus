@@ -1,16 +1,16 @@
-# What is this
+# What is this?
 
-Save stocks financial information from [fundamentus.com.br] [1] in JSON format.
+Save stocks financial information from [fundamentus.com.br][1] in JSON format.
 
 Tags: bovespa, stock market, bolsa de valores, brasil, brazilian, ações
 
 # Status
 
-Very early, but working. Currently only a few data fields are being retrieved, more will be added soon. If you need something that isn't currently saved, you can add the field on `app/fundamentus/fundamentus_parser.rb`.
+Very early, but working. Currently only a few fields are being retrieved, more will be added soon. If you need something that isn't currently saved, you can add the field on `app/fundamentus/fundamentus_parser.rb`.
 
 # Usage
 
-Set the stock symbols you want to fetch on the `stock_codes` array at `save_financial_data.rb` and run the file. There's a commented out array of symbols with the most traded stocks. By default the JSON files will be saved to `./data`
+Set the stock symbols you want to fetch on the `stock_codes` array at `save_financial_data.rb` and run the file. There's a commented out array of symbols with the most traded stocks. By default the JSON files will be saved to `./data/`
 
   [1] http://www.fundamentus.com.br/
 

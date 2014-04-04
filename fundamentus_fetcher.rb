@@ -1,7 +1,10 @@
 class FundamentusFetcher
 
-  def initialize(fetcher)
+  def initialize(fetcher, options = {})
     @fetcher = fetcher
+    if options.has_key?(:verbose)
+      @verbose = options[:verbose]
+    end
   end
 
   def fetch(stock_codes)

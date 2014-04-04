@@ -2,6 +2,12 @@ require 'nokogiri'
 
 class FundamentusParser
 
+  def initialize(options = {})
+    if options.has_key?(:verbose)
+      @verbose = options[:verbose]
+    end
+  end
+
   def parse(content)
     data = {}
     @doc = Nokogiri::HTML.parse(content)

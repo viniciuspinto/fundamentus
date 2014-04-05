@@ -10,6 +10,10 @@ Very early, but working. Currently only a few fields are being retrieved, more w
 
 # Usage
 
+You need [Nokogiri](http://nokogiri.org/):
+
+    gem install nokogiri
+
 Set the stock symbols you want to fetch on the `stock_codes` array at `save_financial_data.rb` and run the file. There's a commented out array of symbols with the most traded stocks. By default the JSON files will be saved to `./data/`
 
 # License

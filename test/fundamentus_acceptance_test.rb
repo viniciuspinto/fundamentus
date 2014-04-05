@@ -32,11 +32,11 @@ class FundamentusAcceptanceTest < MiniTest::Unit::TestCase
   private
 
     def petr4_json
-      '{"market_cap":"200.885.000.000","last_processed":"31/12/2013","net_debt":"221.549.000.000","net_assets":"347.940.000.000","yearly_net_income":"304.890.000.000","yearly_net_profit":"23.570.400.000"}'
+      '{"market_cap":"201.407.000.000","last_processed":"31/12/2013","pl":"8,54","pvp":"0,58","pebit":"4,04","lpa":"1,81","vpa":"26,67","net_margin":"7,5%","net_debt":"221.549.000.000","net_assets":"347.940.000.000","yearly_net_income":"304.890.000.000","yearly_net_profit":"23.570.400.000"}'
     end
 
     def vale5_json
-      '{"market_cap":"157.525.000.000","last_processed":"31/12/2013","net_debt":"56.511.800.000","net_assets":"148.346.000.000","yearly_net_income":"101.490.000.000","yearly_net_profit":"115.091.000"}'
+      '{"market_cap":"158.169.000.000","last_processed":"31/12/2013","pl":"1.374,30","pvp":"1,07","pebit":"3,43","lpa":"0,02","vpa":"27,65","net_margin":"-0,3%","net_debt":"56.511.800.000","net_assets":"148.346.000.000","yearly_net_income":"101.490.000.000","yearly_net_profit":"115.091.000"}'
     end
 
 end

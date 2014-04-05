@@ -1,1 +1,4 @@
-data/*.json
+data/*
+!data/.keep
+test/output/*
+!test/output/.keep

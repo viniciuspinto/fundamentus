@@ -3,6 +3,7 @@ require 'nokogiri'
 class FundamentusParser
 
   LABEL_MAP = {
+    :share_count => 'Nro. Ações',
     :market_cap => 'Valor de mercado',
     :last_processed => 'Últ balanço processado',
     :pl => 'P/L',

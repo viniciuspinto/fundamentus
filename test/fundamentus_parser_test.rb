@@ -8,6 +8,7 @@ class FundamentusParserTest < MiniTest::Unit::TestCase
 
   def test_parse_valid_file
     load_valid_file
+    @parsed[:share_count].must_equal '5.365.300.000'
     @parsed[:market_cap].must_equal '158.169.000.000'
     @parsed[:last_processed].must_equal '31/12/2013'
     @parsed[:pl].must_equal '1.374,30'
@@ -26,6 +27,7 @@ class FundamentusParserTest < MiniTest::Unit::TestCase
 
   def test_parse_invalid_file
     load_invalid_file
+    @parsed[:share_count].must_equal nil
     @parsed[:market_cap].must_equal nil
     @parsed[:last_processed].must_equal nil
     @parsed[:pl].must_equal nil

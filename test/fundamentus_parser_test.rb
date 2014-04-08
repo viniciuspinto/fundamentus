@@ -20,6 +20,8 @@ class FundamentusParserTest < MiniTest::Unit::TestCase
     @parsed[:net_assets].must_equal '148.346.000.000'
     @parsed[:yearly_net_income].must_equal '101.490.000.000'
     @parsed[:yearly_net_profit].must_equal '115.091.000'
+    @parsed[:quarterly_net_income].must_equal '28.626.200.000'
+    @parsed[:quarterly_net_profit].must_equal '-14.867.100.000'
   end
 
   def test_parse_invalid_file
@@ -36,6 +38,8 @@ class FundamentusParserTest < MiniTest::Unit::TestCase
     @parsed[:net_assets].must_equal nil
     @parsed[:yearly_net_income].must_equal nil
     @parsed[:yearly_net_profit].must_equal nil
+    @parsed[:quarterly_net_income].must_equal nil
+    @parsed[:quarterly_net_profit].must_equal nil
   end
 
   def load_valid_file

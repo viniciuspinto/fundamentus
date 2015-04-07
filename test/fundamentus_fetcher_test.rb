@@ -1,6 +1,6 @@
 require_relative './config.rb'
 
-class FundamentusFetcherTest < MiniTest::Unit::TestCase
+class FundamentusFetcherTest < Minitest::Test
 
   def setup
     @url_fetcher = MiniTest::Mock.new

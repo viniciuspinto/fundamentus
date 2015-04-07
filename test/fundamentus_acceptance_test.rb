@@ -1,6 +1,6 @@
 require_relative './config.rb'
 
-class FundamentusAcceptanceTest < MiniTest::Unit::TestCase
+class FundamentusAcceptanceTest < Minitest::Test
 
   def test_save_financial_data
 
@@ -24,7 +24,7 @@ class FundamentusAcceptanceTest < MiniTest::Unit::TestCase
     end
 
     stocks.each do |code, info|
-      File.open(info[:json_path]).read.must_equal info[:json]
+      assert_equal info[:json], File.open(info[:json_path]).read
     end
 
   end

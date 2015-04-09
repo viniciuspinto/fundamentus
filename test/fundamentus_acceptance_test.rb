@@ -9,19 +9,14 @@ class FundamentusAcceptanceTest < Minitest::Test
       'VALE5' => { json_path: TEST_DIR + 'output/VALE5.json', json: vale5_json }
     }
 
+    # Clean up previous tests output files
     stocks.each do |code, info|
       File.unlink(info[:json_path]) unless not File.exists?(info[:json_path])
     end
 
-    html_fetcher = LocalFileFetcher.new(TEST_DIR + 'data/')
-    file_manager = FileManager.new(TEST_DIR + 'output/')
-    parser = FundamentusParser.new
+    fetcher = LocalFileFetcher.new(TEST_DIR + 'data/')
 
-    pages = FundamentusFetcher.new(html_fetcher).fetch(stocks.keys)
-
-    pages.each do |key, content|
-      file_manager.save(key + '.json', parser.parse(content).to_json)
-    end
+    FundamentusData.save stocks.keys, TEST_DIR + 'output/', :fetcher => fetcher
 
     stocks.each do |code, info|
       assert_equal info[:json], File.open(info[:json_path]).read

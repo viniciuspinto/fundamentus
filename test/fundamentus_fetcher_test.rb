@@ -8,20 +8,18 @@ class FundamentusFetcherTest < Minitest::Test
   end
 
   def test_fetching_page_with_code_as_string
-    code = 'VALE5'
-    args = { code => 'http://www.fundamentus.com.br/detalhes.php?papel=' + code }
-    @url_fetcher.expect :fetch, nil, [args]
-    @fundamentus_fetcher.fetch(code)
+    expected_call_args = { 'VALE5' => 'http://www.fundamentus.com.br/detalhes.php?papel=VALE5' }
+    @url_fetcher.expect :fetch, nil, [expected_call_args]
+    @fundamentus_fetcher.fetch('VALE5')
   end
 
   def test_fetching_page_with_array_of_codes
-    stock_codes = ['VALE5', 'PETR4', 'ITUB4']
-    args = {}
-    stock_codes.each do |code|
-      args[code] = 'http://www.fundamentus.com.br/detalhes.php?papel=' + code
-    end
-    @url_fetcher.expect :fetch, nil, [args]
-    @fundamentus_fetcher.fetch(stock_codes)
+    expected_call_args = {
+      'VALE5' => 'http://www.fundamentus.com.br/detalhes.php?papel=VALE5',
+      'PETR4' => 'http://www.fundamentus.com.br/detalhes.php?papel=PETR4'
+    }
+    @url_fetcher.expect :fetch, nil, [expected_call_args]
+    @fundamentus_fetcher.fetch(['VALE5', 'PETR4'])
   end
 
 end

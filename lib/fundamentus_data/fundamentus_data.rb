@@ -1,7 +1,7 @@
-require_relative './fundamentus_fetcher.rb'
-require_relative './url_fetcher.rb'
-require_relative './file_manager.rb'
-require_relative './fundamentus_parser.rb'
+require_relative './fundamentus_fetcher'
+require_relative './fundamentus_parser'
+require_relative './util/url_fetcher'
+require_relative './util/file_manager'
 
 class FundamentusData
   def self.save(stock_codes, destination_path)

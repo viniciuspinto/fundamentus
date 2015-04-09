@@ -6,15 +6,35 @@ Tags: bovespa, stock market, bolsa de valores, brasil, brazilian, ações
 
 # Status
 
-Very early, but working. Currently only a few fields are being retrieved, more will be added soon. If you need something that isn't currently saved, you can add the field on `app/fundamentus/fundamentus_parser.rb`.
+Currently only the fields specified in the following hash are being retrieved:
+
+    LABEL_MAP = {
+      :share_count => 'Nro. Ações',
+      :market_cap => 'Valor de mercado',
+      :last_processed => 'Últ balanço processado',
+      :pl => 'P/L',
+      :pvp => 'P/VP',
+      :pebit => 'P/EBIT',
+      :lpa => 'LPA',
+      :vpa => 'VPA',
+      :net_margin => 'Marg. Líquida',
+      :net_debt => 'Dív. Líquida',
+      :net_assets => 'Patrim. Líq',
+      :yearly_net_income => 'Receita Líquida',
+      :yearly_net_profit => 'Lucro Líquido',
+      :quarterly_net_income => ['Receita Líquida', 2],
+      :quarterly_net_profit => ['Lucro Líquido', 2]
+    }
+
+# Installation
+
+    gem install fundamentus_data
 
 # Usage
 
-You need [Nokogiri](http://nokogiri.org/):
+    require 'fundamentus_data'
 
-    gem install nokogiri
-
-Set the stock symbols you want to fetch on the `stock_codes` array at `save_financial_data.rb` and run the file. There's a commented out array of symbols with the most traded stocks. By default the JSON files will be saved to `./data/`
+    FundamentusData.save ['PETR4', 'BBDC4', 'PSSA3'], './data', :verbose => true
 
 # License
 

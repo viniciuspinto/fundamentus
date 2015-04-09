@@ -7,11 +7,12 @@ class FundamentusData
   def self.save(stock_codes, destination_path, options = {})
     destination_path = File.expand_path(destination_path, Dir.pwd) + '/'
 
-    html_fetcher = UrlFetcher.new(options)
-    pages        = FundamentusFetcher.new(html_fetcher, options).fetch(stock_codes)
-    file_manager = FileManager.new(destination_path, options)
-    parser       = FundamentusParser.new(options)
+    fetcher = options[:fetcher] || UrlFetcher.new(options)
 
+    file_manager = FileManager.new(destination_path, options)
+    parser = FundamentusParser.new(options)
+
+    pages = FundamentusFetcher.new(fetcher, options).fetch(stock_codes)
     pages.each do |key, content|
       file_manager.save(key + '.json', parser.parse(content).to_json)
     end

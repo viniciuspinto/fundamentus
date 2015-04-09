@@ -5,7 +5,7 @@ require_relative './util/file_manager'
 
 class FundamentusData
   def self.save(stock_codes, destination_path)
-    destination_path = File.expand_path(destination_path, File.dirname(__FILE__)) + '/'
+    destination_path = File.expand_path(destination_path, Dir.pwd) + '/'
 
     html_fetcher = UrlFetcher.new({ verbose: true })
     pages        = FundamentusFetcher.new(html_fetcher, { verbose: true }).fetch(stock_codes)

@@ -21,7 +21,7 @@ class UrlFetcher
   end
 
   def download(url)
-    open(url) do |f|
+    URI.open(url, "User-Agent" => "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:112.0) Gecko/20120304 Firefox/118.3") do |f|
       f.read
     end
   end

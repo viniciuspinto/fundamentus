@@ -1,8 +1,8 @@
 # What is this?
 
-Save stocks financial information from [fundamentus.com.br](http://www.fundamentus.com.br) in JSON format.
+[Ruby](https://www.ruby-lang.org/) script to save brazilian stocks information from [fundamentus.com.br](http://www.fundamentus.com.br) in JSON format.
 
-Tags: bovespa, stock market, bolsa de valores, brasil, brazilian, ações
+**Tags**: b3, bovespa, stock market, bolsa de valores, brasil, brazilian, ações
 
 # Status
 
@@ -28,19 +28,37 @@ Currently only the fields specified in the following hash are being retrieved:
 
 # Installation
 
-    gem install fundamentus_data
+Install from [RubyGems](https://rubygems.org/gems/fundamentus_data):
+
+```
+gem install fundamentus_data
+```
+
+Alternatively, build and install locally from source:
+
+```
+gem build fundamentus_data.gemspec
+gem install fundamentus_data-0.1.2.gem
+```
 
 # Usage
 
-    require 'fundamentus_data'
+Create a `data` directory (where the files will be saved) and a Ruby script as follows:
 
-    FundamentusData.save ['PETR4', 'BBDC4', 'PSSA3'], './data', :verbose => true
+```
+require 'fundamentus_data'
+
+FundamentusData.save ['PETR4', 'BBDC4', 'PSSA3'], './data', :verbose => true
+```
+
+# Changelog
+
+0.1.2 (2024-01-28):
+- Fix URL fetching.
 
 # License
 
 The MIT License (MIT)
-
-Copyright (c) 2014 Vinicius Pinto
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

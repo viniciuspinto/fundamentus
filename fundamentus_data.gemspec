@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'fundamentus_data'
-  s.version = '0.1.0'
+  s.version = '0.1.2'
   s.license = 'MIT'
   s.summary = 'Save brazilian stock data from the Fundamentus site in JSON format'
   s.description = 'Fundamentus.com.br is a brazilian site that provides financial information about companies listed in Bovespa (the brazilian stock market). This gem can be used to save data from specified stocks in JSON format for later processing.'

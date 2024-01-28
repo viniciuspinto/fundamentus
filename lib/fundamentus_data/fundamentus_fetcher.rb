@@ -19,7 +19,7 @@ class FundamentusFetcher
   end
 
   def url_for(code)
-    'http://www.fundamentus.com.br/detalhes.php?papel=' + code
+    'https://www.fundamentus.com.br/detalhes.php?papel=' + code
   end
 
 end
